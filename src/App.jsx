@@ -1,9 +1,31 @@
-import React from 'react'
+import { useReducer } from "react";
+import HomePage from "./components/HomePage";
+import { ProductContext } from "./context-api/ProductContext";
+import { productReducer, productState } from "./reducer/productReducer";
+import { BrowserRouter, Route, Routes } from "react-router";
+import ProductDetail from "./components/ProductDetail";
+import Header from "./components/Header";
+import HeaderLayout from "./components/HeaderLayout";
+import AllProducts from "./components/AllProducts";
+import Cart from "./components/Cart";
 
 const App = () => {
-  return (
-    <h1>Hello</h1>
-  )
-}
+    const [state, dispatch] = useReducer(productReducer, productState);
 
-export default App
+    return (
+        <ProductContext.Provider value={{ state, dispatch }}>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<HeaderLayout />}>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="cart" element={<Cart />} />
+                        <Route path="products" element={<AllProducts />} />
+                        <Route path="product/:id" element={<ProductDetail />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </ProductContext.Provider>
+    );
+};
+
+export default App;
