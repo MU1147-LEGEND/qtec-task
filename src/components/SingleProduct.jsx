@@ -6,10 +6,7 @@ import { handleAddToCart, handleRemoveFromCart } from "../utils/cartActions";
 const SingleProduct = ({ product }) => {
     const { dispatch } = useContext(ProductContext);
 
-    // generate random rating for the product
-    const generateRandomRating = () => {
-        return (Math.random() * 5).toFixed(1);
-    };
+    
     return (
         // as mentioned in the task card width 200px, i'm using 224px width for the product card
         <div className="max-w-[14rem] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -29,21 +26,21 @@ const SingleProduct = ({ product }) => {
                 <div className="flex items-center flex-col justify-between">
                     <div className="text-lg font-bold text-green-600 flex items-center justify-between w-full">
                         <span>${product.price}</span>
-                        <span> {generateRandomRating()}⭐ </span>
+                        <span> 4.5⭐ </span>
                     </div>
                     {product.isCarted ? (
                         <button
                             onClick={() =>
                                 handleRemoveFromCart(dispatch, product)
                             }
-                            className="active:translate-y-1 mt-4 px-4 py-2 bg-red-500 text-white text-base rounded hover:bg-red-600 overflow-hidden"
+                            className="active:translate-y-1 mt-4 px-4 py-2 bg-red-500 text-white text-base rounded hover:bg-red-600 overflow-hidden w-full"
                         >
                             Remove from Cart
                         </button>
                     ) : (
                         <button
                             onClick={() => handleAddToCart(dispatch, product)}
-                            className="active:translate-y-1 mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                            className="w-full active:translate-y-1 mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                         >
                             Add to Cart
                         </button>

@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { api } from "../api/api";
 import LoadingSkeleton from "./LoadingSkeleton";
 import { handleAddToCart, handleRemoveFromCart } from "../utils/cartActions";
+import SingleProduct from "./SingleProduct";
 
 const ProductDetail = () => {
     const { id } = useParams();
@@ -92,24 +93,7 @@ const ProductDetail = () => {
                         .filter((p) => p.id !== product.id)
                         .slice(0, 5)
                         .map((similarProduct) => (
-                            <div
-                                key={similarProduct.id}
-                                className="max-w-[14rem] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-                            >
-                                <img
-                                    src={similarProduct.image}
-                                    alt={similarProduct.title}
-                                    className="h-48 w-full object-contain bg-gray-100 hover:scale-105 transition-transform duration-300"
-                                />
-                                <div className="p-4">
-                                    <h3 className="text-xl font-semibold mb-2 hover:underline text-gray-800">
-                                        {similarProduct.title}
-                                    </h3>
-                                    <p className="text-lg font-bold text-green-600">
-                                        ${similarProduct.price}
-                                    </p>
-                                </div>
-                            </div>
+                            <SingleProduct product={similarProduct} />
                         ))}
                 </div>
             </div>
