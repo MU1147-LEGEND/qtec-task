@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react";
-import { ProductContext } from "../context-api/productContext";
 import { useParams } from "react-router";
 import { api } from "../api/api";
-import LoadingSkeleton from "./LoadingSkeleton";
+import { ProductContext } from "../context-api/productContext";
 import { handleAddToCart, handleRemoveFromCart } from "../utils/cartActions";
+import LoadingSkeleton from "./LoadingSkeleton";
 import SingleProduct from "./SingleProduct";
 
 const ProductDetail = () => {
@@ -37,9 +37,9 @@ const ProductDetail = () => {
     }, [dispatch]);
 
     const product =
-        state?.products && state.products.find((p) => p.id === parseInt(id));
+        state?.products && state.products.find((p) => p.id == parseInt(id));
 
-    if (state.loading) {
+    if (state.loading || !state.products?.length) {
         return <LoadingSkeleton />;
     }
 
@@ -93,7 +93,10 @@ const ProductDetail = () => {
                         .filter((p) => p.id !== product.id)
                         .slice(0, 5)
                         .map((similarProduct) => (
-                            <SingleProduct product={similarProduct} />
+                            <SingleProduct
+                                key={similarProduct.id}
+                                product={similarProduct}
+                            />
                         ))}
                 </div>
             </div>

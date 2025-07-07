@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "id": 1,
+            "id": "1",
             "title": "Men's Zip‑Pocket Casual",
             "description": "A versatile and stylish zip-pocket casual pant for everyday wear.",
             "price": 29.99,
@@ -9,7 +9,7 @@
             "isCarted": false
         },
         {
-            "id": 2,
+            "id": "2",
             "title": "Men's Light Khaki Chino",
             "description": "Lightweight and comfortable chino pants perfect for casual outings.",
             "price": 109.65,
@@ -17,7 +17,7 @@
             "isCarted": false
         },
         {
-            "id": 3,
+            "id": "3",
             "title": "Union 5‑Pocket Comfort Twill ",
             "description": "Comfortable twill pants with five pockets for functionality and style.",
             "price": 26.99,
@@ -25,7 +25,7 @@
             "isCarted": false
         },
         {
-            "id": 4,
+            "id": "4",
             "title": "Rip‑Stop Foreman Utility ",
             "description": "Comfortable twill pants with five pockets for functionality and style.",
             "price": 36.99,
@@ -33,7 +33,7 @@
             "isCarted": false
         },
         {
-            "id": 5,
+            "id": "5",
             "title": "Men's Basic Blue Crewneck ",
             "description": "A classic blue crewneck sweater for a timeless look.",
             "price": 24.99,
@@ -41,7 +41,7 @@
             "isCarted": false
         },
         {
-            "id": 6,
+            "id": "6",
             "title": "Men's Premium Tan Blank ",
             "description": "A premium tan blank sweater for a sophisticated style.",
             "price": 19.99,
@@ -49,7 +49,7 @@
             "isCarted": false
         },
         {
-            "id": 7,
+            "id": "7",
             "title": "Men's Sleek Black Crew ",
             "description": "A sleek black crew sweater for a modern and stylish appearance.",
             "price": 27.5,
@@ -57,10 +57,10 @@
             "isCarted": false
         },
         {
-            "id": 8,
+            "id": "8",
             "title": "Men's Teal Graphic-Free Tee",
             "description": "A vibrant teal graphic-free tee for a fresh and casual look.",
-            "price": 22.0,
+            "price": 22,
             "image": "http://localhost:5173/src/assets/img8.png",
             "isCarted": false
         }

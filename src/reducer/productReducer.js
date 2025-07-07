@@ -48,6 +48,7 @@ export const productReducer = (state = productState, action) => {
                     ? { ...product, isCarted: false }
                     : product
             );
+
             return {
                 ...state,
                 products: updatedProducts,

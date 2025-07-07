@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <header className="bg-gray-800 text-white p-4 sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center w-4/5">
-                <Link to="/" >
+                <Link to="/">
                     <h1 className="text-2xl font-bold">Qtec Store</h1>
                 </Link>
                 <nav>
@@ -14,11 +14,7 @@ const Header = () => {
                                 Home
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/products" className="hover:underline">
-                                Products
-                            </Link>
-                        </li>
+
                         <li>
                             <Link to="/cart" className="hover:underline">
                                 Cart

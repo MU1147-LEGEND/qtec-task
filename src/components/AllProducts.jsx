@@ -37,24 +37,22 @@ const AllProducts = () => {
         <div>
             <h1 className="text-2xl mb-5">All Products</h1>
             {state.loading && <LoadingSkeleton />}
-            {state.error && <p>Error: {state.error} - Please make sure JSON server is running locally</p>}
-            <div className="flex items-center justify-center relative">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4">
+            {state.error && (
+                <p>
+                    Error: {state.error} - Please make sure JSON server is
+                    running locally <code>npm run server</code>
+                </p>
+            )}
+            <div className="">
+                <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4">
                     {state.products.map((product) => (
                         <SingleProduct product={product} key={product.id} />
                     ))}
                 </div>
-
-                {/* when the carted product is not empty then the sideabr will appear. */}
-                {state?.cartedProducts?.length > 0 && (
-                    <div className="h-full w-[20%]">
-                        <SideCart />
-                    </div>
-                )}
-
-                {/* if now products available show the msg
-                 */}
             </div>
+
+            {/* if now products available show the msg
+             */}
             {state.products.length === 0 && (
                 <p className="text-gray-500 mt-4">No products available.</p>
             )}

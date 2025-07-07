@@ -30,9 +30,11 @@ const SingleProduct = ({ product }) => {
                     </div>
                     {product.isCarted ? (
                         <button
-                            onClick={() =>
-                                handleRemoveFromCart(dispatch, product)
-                            }
+                        type="button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleRemoveFromCart(dispatch, product);
+                            }}
                             className="active:translate-y-1 mt-4 px-4 py-2 bg-red-500 text-white text-base rounded hover:bg-red-600 overflow-hidden w-full"
                         >
                             Remove from Cart

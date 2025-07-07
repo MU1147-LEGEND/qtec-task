@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { ProductContext } from "../context-api/productContext";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Cart = () => {
     const { state, dispatch } = useContext(ProductContext);
     const { cartedProducts } = state;
+    const navigate = useNavigate();
     return (
         <div className="container mx-auto p-4 max-w-7xl">
             <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
@@ -54,7 +55,7 @@ const Cart = () => {
                     Your cart is empty. Start shopping!
                     <br />
                     <button
-                        onClick={() => (window.location.href = "/products")}
+                        onClick={() => navigate("/")}
                         className="ml-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300"
                     >
                         Go to Products
