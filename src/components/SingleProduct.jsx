@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ProductContext } from "../context-api/ProductContext";
+import { ProductContext } from "../context-api/productContext";
 import { useContext } from "react";
 import { handleAddToCart, handleRemoveFromCart } from "../utils/cartActions";
 

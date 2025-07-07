@@ -5,7 +5,7 @@ import Cart from "./components/Cart";
 import HeaderLayout from "./components/HeaderLayout";
 import HomePage from "./components/HomePage";
 import ProductDetail from "./components/ProductDetail";
-import { ProductContext } from "./context-api/ProductContext";
+import { ProductContext } from "./context-api/productContext";
 import { productReducer, productState } from "./reducer/productReducer";
 
 const App = () => {

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { ProductContext } from "../context-api/ProductContext";
+import { ProductContext } from "../context-api/productContext";
 import { useParams } from "react-router";
 import { api } from "../api/api";
 import LoadingSkeleton from "./LoadingSkeleton";

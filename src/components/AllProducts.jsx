@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { api } from "../api/api";
-import { ProductContext } from "../context-api/ProductContext";
+import { ProductContext } from "../context-api/productContext";
 import SingleProduct from "./SingleProduct";
 import LoadingSkeleton from "./LoadingSkeleton";
 
