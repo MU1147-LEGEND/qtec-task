@@ -1,0 +1,100 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Men's Zip‑Pocket Casual Pants",
+            "price": 29.99,
+            "description": "Everyday casual pants with zip pockets for secure carry. Slim fit with an elastic waistband and cotton–spandex blend.",
+            "category": "Men’s Fashion",
+            "brand": "Sonoma Goods For Life",
+            "rating": 4.4,
+            "color": "Olive",
+            "sizes": ["S", "M", "L", "XL"],
+            "image": "https://media.kohlsimg.com/is/image/kohls/6103402_Olive?wid=805&hei=805&op_sharpen=1"
+        },
+        {
+            "id": 2,
+            "title": "Men's Light Khaki Chino",
+            "price": 109.65,
+            "description": "Premium chinos made from stretchy cotton blend. Tailored slim fit in light khaki.",
+            "category": "Men’s Fashion",
+            "brand": "Perk",
+            "rating": 4.6,
+            "color": "Light Khaki",
+            "sizes": ["S", "M", "L", "XL"],
+            "image": "https://perkclothing.com/cdn/shop/products/Perk_Product_Square.027.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Union 5‑Pocket Comfort Twill Pants",
+            "price": 26.99,
+            "description": "Straight-fit twill pants with elastic waistband. 83% cotton, 17% spandex—super comfy with five-pocket styling.",
+            "category": "Men’s Fashion",
+            "brand": "Union",
+            "rating": 5.0,
+            "color": "Grey",
+            "sizes": ["S", "M", "L", "XL"],
+            "image": ""
+        },
+        {
+            "id": 4,
+            "title": "Rip‑Stop Foreman Utility Pants",
+            "price": 36.99,
+            "description": "Durable work pants made from rip‑stop cotton, garment washed for softness. Relaxed fit with reinforced utility pockets.",
+            "category": "Workwear",
+            "brand": "KEY Rip‑Stop",
+            "rating": 4.3,
+            "color": "Dark Grey",
+            "sizes": ["S", "M", "L", "XL"],
+            "image": "https://cdn11.bigcommerce.com/s-r4f6haoaux/images/stencil/500x659/products/194/2756/467-04-rip-stop-foreman-work-pants-graphite-gray-KEY-front__74775.1695676909.jpg?c=1"
+        },
+        {
+            "id": 5,
+            "title": "Men's Basic Blue Crewneck T‑Shirt",
+            "price": 24.99,
+            "description": "Classic crewneck tee in soft cotton. Perfect for everyday wear with a regular fit.",
+            "category": "Men’s Fashion",
+            "brand": "CasualWear",
+            "rating": 4.4,
+            "color": "Blue",
+            "size": ["S", "M", "L", "XL"],
+            "image": "https://www.signboardbd.com/wp-content/uploads/2016/05/T-Shirt-C-600x660.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Men's Premium Tan Blank T‑Shirt",
+            "price": 19.99,
+            "description": "Minimalist blank tan tee, ideal for layering or standalone style.",
+            "category": "Men’s Fashion",
+            "brand": "BasicLine",
+            "rating": 4.2,
+            "color": "Tan",
+            "size": ["S", "M", "L", "XL"],
+            "image": "https://dreamstime.com/simple-plain-blank-tshirt-men/tan-tshirt.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Men's Sleek Black Crew T‑Shirt",
+            "price": 27.5,
+            "description": "Premium black tee with sleek crew neckline and durable stitching.",
+            "category": "Men’s Fashion",
+            "brand": "UrbanBasics",
+            "rating": 4.6,
+            "color": "Black",
+            "size": ["M", "L", "XL"],
+            "image": "https://gq.com/story/the-best-black-t-shirts/black-tshirt.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Men's Teal Graphic-Free Tee",
+            "price": 22.0,
+            "description": "Subtle teal tee, smooth fabric with no graphics—clean and modern.",
+            "category": "Men’s Fashion",
+            "brand": "FreshFit",
+            "rating": 4.3,
+            "color": "Teal",
+            "size": ["S", "M", "L"],
+            "image": "https://pikbest.com/png-images/teal-mens-t-shirt-mockup/.../teal-tshirt.png"
+        }
+    ]
+}
