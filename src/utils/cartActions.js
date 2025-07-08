@@ -49,3 +49,11 @@ export const handleDecreaseQuantity = (product, dispatch) => {
         });
     }
 };
+
+export const handleCheckout = (state, setCheckout) => {
+    if (state.cartedProducts.length === 0) {
+        alert("Your cart is empty. Please add items to your cart.");
+        return;
+    }
+    setCheckout(true);
+};

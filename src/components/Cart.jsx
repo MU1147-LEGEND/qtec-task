@@ -1,6 +1,10 @@
 import { useContext } from "react";
 import { ProductContext } from "../context-api/productContext";
 import { Link, useNavigate } from "react-router";
+import {
+    handleDecreaseQuantity,
+    handleIncreaseQuantity,
+} from "../utils/cartActions";
 
 const Cart = () => {
     const { state, dispatch } = useContext(ProductContext);
@@ -45,6 +49,26 @@ const Cart = () => {
                                 className="w-full px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors duration-300"
                             >
                                 Remove from Cart
+                            </button>
+                        </div>
+                        <div className="p-2 flex items-center justify-around ">
+                            <button
+                                onClick={() =>
+                                    handleDecreaseQuantity(product, dispatch)
+                                }
+                                disabled={product.cartQuantity <= 1}
+                                className="disabled:opacity-50 text-2xl bg-gray-200 px-4 py-0.5"
+                            >
+                                -
+                            </button>
+                            <span className="mx-2">{product.cartQuantity}</span>
+                            <button
+                                onClick={() =>
+                                    handleIncreaseQuantity(product, dispatch)
+                                }
+                                className="text-2xl bg-gray-200 px-4 py-0.5"
+                            >
+                                +
                             </button>
                         </div>
                     </div>

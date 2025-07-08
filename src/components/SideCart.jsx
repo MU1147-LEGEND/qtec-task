@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ProductContext } from "../context-api/productContext";
 import {
+    handleCheckout,
     handleDecreaseQuantity,
     handleIncreaseQuantity,
 } from "../utils/cartActions";
@@ -23,16 +24,6 @@ const SideCart = () => {
         (acc, product) => acc + (product.cartQuantity || 1),
         0
     );
-
-    const handleCheckout = () => {
-        if (state.cartedProducts.length === 0) {
-            alert("Your cart is empty. Please add items to your cart.");
-            return;
-        }
-        setCheckout(true);
-
-        dispatch({ type: "CLEAR_CART" });
-    };
 
     return (
         <>
@@ -116,7 +107,9 @@ const SideCart = () => {
                             </h3>
                         </div>
                         <button
-                            onClick={() => handleCheckout()}
+                            onClick={() => {
+                                handleCheckout(state, setCheckout);
+                            }}
                             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300"
                         >
                             Checkout
@@ -127,7 +120,7 @@ const SideCart = () => {
                 )}
             </div>
             {checkout && !orderSubmitted && (
-                <CheckoutModal setOrderSubmitted={setOrderSubmitted} />
+                <CheckoutModal dispatch={dispatch} setCheckout={setCheckout} />
             )}
         </>
     );
