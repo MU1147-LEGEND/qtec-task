@@ -120,7 +120,11 @@ const SideCart = () => {
                 )}
             </div>
             {checkout && !orderSubmitted && (
-                <CheckoutModal dispatch={dispatch} setCheckout={setCheckout} />
+                <CheckoutModal
+                    dispatch={dispatch}
+                    setCheckout={setCheckout}
+                    setOrderSubmitted={setOrderSubmitted}
+                />
             )}
         </>
     );

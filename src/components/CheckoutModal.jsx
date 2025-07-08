@@ -1,4 +1,4 @@
-const CheckoutModal = ({ dispatch, setCheckout }) => {
+const CheckoutModal = ({ dispatch, setCheckout, setOrderSubmitted }) => {
     const handleClose = () => {
         setCheckout(false);
     };
