@@ -40,6 +40,11 @@ const CheckoutModal = ({ dispatch, setCheckout, setOrderSubmitted }) => {
                         );
                         setOrderSubmitted(true);
                         dispatch({ type: "CLEAR_CART" });
+
+                        setTimeout(() => {
+                            setCheckout(false);
+                            setOrderSubmitted(false);
+                        }, 1000);
                     }}
                 >
                     <p className="text-gray-600 mb-4">
