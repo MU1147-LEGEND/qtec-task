@@ -193,7 +193,7 @@ The backend JSON Server provides the following REST API endpoints:
 
 2. **Products not loading**
 
-    - Make sure the JSON Server is running (`pnpm run server`)
+    - Make sure the JSON Server is running (`npm run server`)
     - Check if `backend/db.json` file exists and contains product data
 
 3. **Images not displaying**
@@ -210,24 +210,10 @@ The backend JSON Server provides the following REST API endpoints:
 If you encounter port conflicts:
 
 -   Frontend (Vite): Change port in `vite.config.js`
--   Backend (JSON Server): Use `npx json-server ./backend/db.json --port 3001`
+-   Backend (JSON Server): Use `npx json-server ./backend/db.json --port 3000`
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-feature`)
-3. Commit your changes (`git commit -am 'Add new feature'`)
-4. Push to the branch (`git push origin feature/new-feature`)
-5. Create a Pull Request
 
 ## 📝 License
 
 This project is created for QTEC technical assessment purposes.
 
-## 📞 Support
-
-If you encounter any issues or have questions, please create an issue in the repository or contact the development team.
-
----
-
-**Happy Coding! 🎉**
