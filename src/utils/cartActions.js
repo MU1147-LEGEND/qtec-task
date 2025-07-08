@@ -27,3 +27,25 @@ export const handleRemoveFromCart = async (dispatch, product) => {
     //     isCarted: false,
     // });
 };
+
+export const handleIncreaseQuantity = (product, dispatch) => {
+    dispatch({
+        type: "INCREASE_QUANTITY",
+        payload: product,
+    });
+    console.log(product);
+};
+export const handleDecreaseQuantity = (product, dispatch) => {
+    if (product.cartQuantity <= 1) {
+        // If quantity becomes 0, remove from cart
+        dispatch({
+            type: "REMOVE_FROM_CART",
+            payload: product,
+        });
+    } else {
+        dispatch({
+            type: "DECREASE_QUANTITY",
+            payload: product,
+        });
+    }
+};

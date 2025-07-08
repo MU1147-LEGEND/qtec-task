@@ -93,7 +93,7 @@ You need to run both the frontend and backend servers for the application to wor
 Open a terminal and run:
 
 ```bash
-npm run server
+npm run server (must use this command when starting the backend server)
 ```
 
 This will start the JSON Server on `http://localhost:3000` with the following endpoints:

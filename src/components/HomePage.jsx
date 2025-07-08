@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { ProductContext } from "../context-api/productContext";
 import AllProducts from "./AllProducts";
 import SideCart from "./SideCart";
+import cart from "../assets/cart.png";
+import next from "../assets/next.png";
 
 const HomePage = () => {
     const { state } = useContext(ProductContext);
@@ -26,7 +28,14 @@ const HomePage = () => {
                         onClick={toggleCart}
                         className="fixed top-4 right-4 bg-yellow-500 hover:text-gray-700 px-3 py-1 text-center text-black text-2xl font-bold rounded-full transition-colors duration-300"
                     >
-                        {isCartCanOpen ? ">" : "<"}
+                        <img
+                            src={cart}
+                            alt="cart"
+                            className="h-8 w-8 inline-block"
+                        />
+                        <span className="ml-2">
+                            {state?.cartedProducts?.length || 0}
+                        </span>
                     </button>
 
                     {/* ------------------ */}

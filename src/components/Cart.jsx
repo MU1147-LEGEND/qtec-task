@@ -50,6 +50,8 @@ const Cart = () => {
                     </div>
                 ))}
             </div>
+
+            {/* if cart is empty show the message */}
             {cartedProducts.length === 0 && (
                 <p className="text-gray-500 mt-4">
                     Your cart is empty. Start shopping!

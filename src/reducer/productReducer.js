@@ -21,6 +21,7 @@ export const productReducer = (state = productState, action) => {
             return { ...state, loading: false, error: action.payload };
         case "ADD_TO_CART": {
             if (
+                // checking if the product is already in the cart
                 state.cartedProducts.some(
                     (product) => product.id === action.payload.id
                 )
@@ -30,22 +31,23 @@ export const productReducer = (state = productState, action) => {
 
             const updatedProducts = state.products.map((product) =>
                 product.id === action.payload.id
-                    ? { ...product, isCarted: true }
+                    ? { ...product, isCarted: true, cartQuantity: 1 }
                     : product
             );
+
             return {
                 ...state,
                 products: updatedProducts,
                 cartedProducts: [
                     ...state.cartedProducts,
-                    { ...action.payload, isCarted: true },
+                    { ...action.payload, isCarted: true, cartQuantity: 1 },
                 ],
             };
         }
         case "REMOVE_FROM_CART": {
             const updatedProducts = state.products.map((product) =>
                 product.id === action.payload.id
-                    ? { ...product, isCarted: false }
+                    ? { ...product, isCarted: false, cartQuantity: 0 }
                     : product
             );
 
@@ -66,6 +68,57 @@ export const productReducer = (state = productState, action) => {
                 ...state,
                 products: updatedProducts,
                 cartedProducts: [],
+            };
+        }
+        case "INCREASE_QUANTITY": {
+            const updatedCartedProducts = state.cartedProducts.map((product) =>
+                product.id === action.payload.id
+                    ? { ...product, cartQuantity: product.cartQuantity + 1 }
+                    : product
+            );
+
+            const updatedProducts = state.products.map((product) =>
+                product.id === action.payload.id
+                    ? {
+                          ...product,
+                          cartQuantity: (product.cartQuantity || 1) + 1,
+                      }
+                    : product
+            );
+
+            return {
+                ...state,
+                products: updatedProducts,
+                cartedProducts: updatedCartedProducts,
+            };
+        }
+        case "DECREASE_QUANTITY": {
+            const updatedCartedProducts = state.cartedProducts
+                .map((product) =>
+                    product.id === action.payload.id
+                        ? { ...product, cartQuantity: product.cartQuantity - 1 }
+                        : product
+                )
+                .filter((product) => product.cartQuantity > 0);
+
+            const updatedProducts = state.products.map((product) =>
+                product.id === action.payload.id
+                    ? {
+                          ...product,
+                          //   protecting negative cart quantity if the user bypass the client side logic this will prevent from going negative
+                          cartQuantity: Math.max(
+                              (product.cartQuantity || 1) - 1,
+                              0
+                          ),
+                          isCarted: (product.cartQuantity || 1) - 1 > 0,
+                      }
+                    : product
+            );
+
+            return {
+                ...state,
+                products: updatedProducts,
+                cartedProducts: updatedCartedProducts,
             };
         }
         default:
